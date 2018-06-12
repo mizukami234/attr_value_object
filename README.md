@@ -2,7 +2,7 @@
 
 `attr_value_object` is a minimalistic module.
 
-`attr_value_object` is needed in the case when you have a model with multiple fields to represent the dependent property and you want to separate logic. Address of user for example. The fields are `postcode`, `prefecture_id`, `street` and `building`. If you are using Ruby on Rails, you may add columns into users with a migration. You may want them to indicate a same property (address) explicitly. So the `User` model looks like following.
+`attr_value_object` is useful in the case when you have a model with multiple fields to represent the dependent property and you want to separate logic. For example, address of user. The fields are `postcode`, `prefecture_id`, `street` and `building`. If you are using Ruby on Rails, you will add columns into users with a migration. You may want to make them indicating explicitly a same property (address). So the `User` model looks like following.
 
 ```rb
 # ActiveRecord is not required.
@@ -16,7 +16,7 @@ class User
 end
 ```
 
-If another model has the same property (address) and you want to `JOIN` based on `addresses`, it's good to create `addresses` table. But there is the case you don't need such a function. This is inevitable because the available types of database column is finite. However, you may still want to separate logic. Then, you can do it with creating `Address` class and specifying `attr_value_object`.
+If another model has the same property (address) and you want to `JOIN` based on `addresses`, it's good to create `addresses` table. But there is the case you don't need such a function. However, you may still want to separate logic. Then, you can do it with creating `Address` class and specifying `attr_value_object`.
 
 ```rb
 class Address
